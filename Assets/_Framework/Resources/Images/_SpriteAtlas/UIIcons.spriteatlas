@@ -1,0 +1,113 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: UIIcons
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: c43c3449dcabdf34f83d65341998cde8, type: 3}
+    - {fileID: 2800000, guid: 4462f017ddd619c40a24a715acd94207, type: 3}
+    - {fileID: 2800000, guid: b5f31fd8a9516bc428fe97df31b41764, type: 3}
+    - {fileID: 2800000, guid: 8cb29fbfe3e866043bee37994539d9f9, type: 3}
+    - {fileID: 2800000, guid: d7e69ace4232a1047a31ff79f597c9d0, type: 3}
+    - {fileID: 2800000, guid: f64c906232216e546a06c277313bc7da, type: 3}
+    - {fileID: 2800000, guid: 65f3d1ef2b6c10a47bc2d968b9ce1a33, type: 3}
+    - {fileID: 2800000, guid: dfc19fa70e38a094a90e5bb035f26a8b, type: 3}
+    - {fileID: 2800000, guid: 6dd674336eae61e4a96c539405625aa4, type: 3}
+    - {fileID: 2800000, guid: 4097a5d440580a644ae05110d382d324, type: 3}
+    - {fileID: 2800000, guid: db2a5f928b9c91649a761a70c1cce1e9, type: 3}
+    - {fileID: 2800000, guid: 872f3cafc69dcfc42b407454864505d4, type: 3}
+    - {fileID: 2800000, guid: 3484990bfa83fdf42afed26aedaa2bf1, type: 3}
+    - {fileID: 2800000, guid: 070869024df945e409100b7fab50d7c7, type: 3}
+    - {fileID: 2800000, guid: 93e2c38c72025604da3fdf35c48123d0, type: 3}
+    - {fileID: 2800000, guid: 93bd1ae14d421514ab3e5f6e301a3b0a, type: 3}
+    - {fileID: 2800000, guid: a1856c5e6ef65b142ad1c80f21dc3ace, type: 3}
+    - {fileID: 2800000, guid: 1bd025f2bf12b5345ae319697245f4f9, type: 3}
+    - {fileID: 2800000, guid: 992772430106d98428d094d4cffeb5dc, type: 3}
+    - {fileID: 2800000, guid: c4cf4c645b6657248b91c42e016e1d50, type: 3}
+    totalSpriteSurfaceArea: 331296
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 93bd1ae14d421514ab3e5f6e301a3b0a, type: 3}
+  - {fileID: 21300000, guid: 070869024df945e409100b7fab50d7c7, type: 3}
+  - {fileID: 21300000, guid: f64c906232216e546a06c277313bc7da, type: 3}
+  - {fileID: 21300000, guid: db2a5f928b9c91649a761a70c1cce1e9, type: 3}
+  - {fileID: 21300000, guid: 1bd025f2bf12b5345ae319697245f4f9, type: 3}
+  - {fileID: 21300000, guid: 6dd674336eae61e4a96c539405625aa4, type: 3}
+  - {fileID: 21300000, guid: 992772430106d98428d094d4cffeb5dc, type: 3}
+  - {fileID: 21300010, guid: c4cf4c645b6657248b91c42e016e1d50, type: 3}
+  - {fileID: 21300008, guid: c4cf4c645b6657248b91c42e016e1d50, type: 3}
+  - {fileID: 21300014, guid: c4cf4c645b6657248b91c42e016e1d50, type: 3}
+  - {fileID: 21300012, guid: c4cf4c645b6657248b91c42e016e1d50, type: 3}
+  - {fileID: 21300002, guid: c4cf4c645b6657248b91c42e016e1d50, type: 3}
+  - {fileID: 21300000, guid: c4cf4c645b6657248b91c42e016e1d50, type: 3}
+  - {fileID: 21300006, guid: c4cf4c645b6657248b91c42e016e1d50, type: 3}
+  - {fileID: 21300004, guid: c4cf4c645b6657248b91c42e016e1d50, type: 3}
+  - {fileID: 21300000, guid: 4097a5d440580a644ae05110d382d324, type: 3}
+  - {fileID: 21300000, guid: 4462f017ddd619c40a24a715acd94207, type: 3}
+  - {fileID: 21300000, guid: dfc19fa70e38a094a90e5bb035f26a8b, type: 3}
+  - {fileID: 21300000, guid: b5f31fd8a9516bc428fe97df31b41764, type: 3}
+  - {fileID: 21300000, guid: c43c3449dcabdf34f83d65341998cde8, type: 3}
+  - {fileID: 21300000, guid: 3484990bfa83fdf42afed26aedaa2bf1, type: 3}
+  - {fileID: 21300000, guid: 93e2c38c72025604da3fdf35c48123d0, type: 3}
+  - {fileID: 21300000, guid: a1856c5e6ef65b142ad1c80f21dc3ace, type: 3}
+  - {fileID: 21300000, guid: d7e69ace4232a1047a31ff79f597c9d0, type: 3}
+  - {fileID: 21300000, guid: 872f3cafc69dcfc42b407454864505d4, type: 3}
+  - {fileID: 21300000, guid: 8cb29fbfe3e866043bee37994539d9f9, type: 3}
+  - {fileID: 21300000, guid: 65f3d1ef2b6c10a47bc2d968b9ce1a33, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - SoundOff_128
+  - SFXOff_128_v2
+  - GameControllerDisconnected_128
+  - QuestionMark_128
+  - VibrationOff_128
+  - Play_128
+  - VibrationOn_128
+  - UIButtons_50_5
+  - UIButtons_50_4
+  - UIButtons_50_7
+  - UIButtons_50_6
+  - UIButtons_50_1
+  - UIButtons_50_0
+  - UIButtons_50_3
+  - UIButtons_50_2
+  - Plus_128
+  - Cart_128
+  - Lock_128
+  - Close_128
+  - Back_128
+  - Settings_128
+  - SFXOn_128
+  - SoundOn_128
+  - GameController_128
+  - Retry_128
+  - GameAchievements_128
+  - Home_128
+  m_Tag: UIIcons
+  m_IsVariant: 0
