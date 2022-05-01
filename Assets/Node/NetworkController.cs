@@ -17,7 +17,10 @@ public class NetworkController : MonoBehaviour
 
     Dictionary<NodeController, IUser> networkDifficulty;
     Dictionary<Node, NodeController> nodeControllers;
-    NodeController startNodeController;
+
+    public IEnumerable<NodeController> NodeControllers => nodeControllers.Values;
+    public NodeController StartNodeController { get; private set; }
+
     private void Awake()
     {
         networkDifficulty = new Dictionary<NodeController, IUser>();
@@ -29,7 +32,7 @@ public class NetworkController : MonoBehaviour
         foreach (NodeController item in nodeControllers.Values)
             StartCoroutine(new LockedState(Player.Instance, item).SetState());
 
-        StartCoroutine(new StartState(Player.Instance, startNodeController).SetState());
+        StartCoroutine(new StartState(Player.Instance, StartNodeController).SetState());
         Framework.EventManager.StartListening(Game.System.Event.SystemListener.PreserveDataBetweenReload, PreserveData);
 
         transform.position = new Vector3(-NodeController.maxX / 2, -NodeController.maxY / 2);
@@ -71,7 +74,7 @@ public class NetworkController : MonoBehaviour
         else if (node.Type == typeof(StartNode))
         {
             nodeController = Instantiate(StartNodeControllerPrefab, transform);
-            startNodeController = nodeController;
+            StartNodeController = nodeController;
         }
         else if (node.Type == typeof(TreasureNode))
             nodeController = Instantiate(TreasureNodeControllerPrefab, transform);

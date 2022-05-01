@@ -17,6 +17,8 @@ public class TracerManager : MonoBehaviour
         return action;
     }
 
+    bool subscabed;
+
     private void Awake()
     {
         nodeControllers = new Dictionary<NodeController, TracerHackAction>();
@@ -30,13 +32,30 @@ public class TracerManager : MonoBehaviour
         if (triggeringPercent == null || !RandomHelper.RandomChance(triggeringPercent.TriggeringPercent))
             return;
 
+        Subscabe();
+    }
+
+    void Subscabe()
+    {
+        if (subscabed)
+            return;
+
+        subscabed = true;
         Framework.EventManager.TriggerEvent(Game.System.Event.CustomListener.ActivateTracers);
-        Destroy(this);
     }
 
     private void OnDestroy()
     {
         nodeControllers = null;
+        Unubscabe();
+    }
+
+    void Unubscabe()
+    {
+        if (!subscabed)
+            return;
+
+        subscabed = true;
         Framework.EventManager.StopListening(Game.System.Event.CustomListener.NodeHacked, TryActivate);
     }
 }

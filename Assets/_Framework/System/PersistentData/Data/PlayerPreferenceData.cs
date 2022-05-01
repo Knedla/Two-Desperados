@@ -23,12 +23,12 @@ namespace Game.System.PersistentData
         {
             base.SetDefaultValues();
 
-            NodeCount = 3;
-            TreasureNodeCount = 1;
-            FirewallNodeCount = 1;
-            SpamNodeCount = 1;
-            SpamNodeDecrease = 0;
-            TrapDelayTime = 0;
+            NodeCount = 19;
+            TreasureNodeCount = 7;
+            FirewallNodeCount = 3;
+            SpamNodeCount = 5;
+            SpamNodeDecrease = 3;
+            TrapDelayTime = 4;
         }
     }
 }

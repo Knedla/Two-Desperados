@@ -36,8 +36,9 @@ SpriteAtlas:
     - {fileID: 2800000, guid: 2817c7e854fdbb843a0774f093973505, type: 3}
     - {fileID: 2800000, guid: ed2c486bd2d66ee44b5ee747d8e9dc59, type: 3}
     - {fileID: 2800000, guid: f990e56c4cc6a0347931fe8f3349b58d, type: 3}
+    - {fileID: 2800000, guid: 5d54ae89c7a537941890dce14f4c3452, type: 3}
     - {fileID: 2800000, guid: a50f90597a7534742a48739dcda72bbc, type: 3}
-    totalSpriteSurfaceArea: 42208
+    totalSpriteSurfaceArea: 46608
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
@@ -45,6 +46,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: e85da1a5c042acd4dad24e1916988974, type: 3}
   - {fileID: 21300000, guid: 2817c7e854fdbb843a0774f093973505, type: 3}
   - {fileID: 21300000, guid: a50f90597a7534742a48739dcda72bbc, type: 3}
+  - {fileID: 21300000, guid: 5d54ae89c7a537941890dce14f4c3452, type: 3}
   - {fileID: 21300000, guid: 4df780fac89a97f48837c9a9b4397ce6, type: 3}
   - {fileID: 21300004, guid: 4df780fac89a97f48837c9a9b4397ce6, type: 3}
   - {fileID: 21300002, guid: 4df780fac89a97f48837c9a9b4397ce6, type: 3}
@@ -55,6 +57,7 @@ SpriteAtlas:
   - Freeze_64
   - Nuke_64
   - xp
+  - StarLinesPivot
   - slow_f
   - nuke_f
   - freeze_f

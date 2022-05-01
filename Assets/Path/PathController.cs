@@ -19,7 +19,7 @@ public class PathController : TimerView
     public override void SetData(float time)
     {
         this.time = time;
-        MovementSpriteRenderer.transform.localPosition = new Vector3(offset, 0, 0);
+        //MovementSpriteRenderer.transform.localPosition = new Vector3(offset, 0, 0);
         MovementSpriteRenderer.gameObject.SetActive(true);
     }
 
@@ -39,17 +39,28 @@ public class PathController : TimerView
 
     public void Prepare(bool leftToRight)
     {
-        offset = leftToRight ? -defaultOffset : defaultOffset;
+        //offset = leftToRight ? -defaultOffset : defaultOffset;
+        offset = leftToRight ? defaultOffset : -defaultOffset;
+        MovementSpriteRenderer.transform.localPosition = new Vector3(-0.5f * offset, 0, 0);
     }
 
     public override void UpdateView(float timePass)
     {
-        MovementSpriteRenderer.transform.localPosition = new Vector3(offset * (1 - (timePass / time)), 0, 0);
+        //MovementSpriteRenderer.transform.localPosition = new Vector3(offset * (1 - (timePass / time)), 0, 0);
+
+        float scalse = timePass / time;
+        
+        if (scalse > 1)
+            scalse = 1;
+
+        MovementSpriteRenderer.transform.localScale = new Vector3(scalse * offset, 1, 1);
     }
 
     public void SetEndState()
     {
-        MovementSpriteRenderer.transform.localPosition = new Vector3(0, 0, 0);
+        //MovementSpriteRenderer.transform.localPosition = new Vector3(0, 0, 0);
+        MovementSpriteRenderer.transform.localPosition = new Vector3(-0.5f, 0, 0);
+        MovementSpriteRenderer.transform.localScale = new Vector3(1, 1, 1);
         MovementSpriteRenderer.gameObject.SetActive(true);
     }
 }

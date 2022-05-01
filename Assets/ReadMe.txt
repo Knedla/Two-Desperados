@@ -16,14 +16,30 @@ al na kraju entity system je za svaku igru poseban, a to je deo system foldera t
 ranije sam imao odvojene foldere "implementation" (core implementacija logike kontrole/sistema) i "instance" (izvedene klase specificne za projekat), ali mi ni to nije zavrsavalo posao... sve razbacano svuda
 
 
+The pathfinding algorithm should be implemented by the developer (built-in Unity solutions or external packages should not be used)
+nadjoh neku implementaciju AStar algoritma, uzo to preradio da odgovara mojim potrebama
+trebalo mi i PriorityQueue, e sad posto algoritam "should be implemented by the developer" i "external packages should not be used" dekompajlovao sam Priority Queue.dll i ubacio rucno i sad izgleda ko da sam ga ja pisao :)
 
 
 
-animacija punjenja patha - nisam znao da je spritemask globalan, zato se nekad vide delovi patha tamo gde ne bi trebalo... 
+
 nesto lose izgleda popunjavanje puta izmedju nodova - nije glatka animacija... bar ne u game view, u scene view izgleda normalno
-fali kad se klikne u prazno da skloni ActionPanel
-
+fali kad se klikne u prazno da skloni ActionPanel - esc radi poso, al ne moze jednom rukom da se igra :)
+mapu ce uvek da centrira, pozicioniranje nije orijentisano prema start nodu
 
 
 ne moze da se klikne na nodove koji nisu unlockovani. mislim, meni je to potpuno prirodno, ali ne znam dal je ocekivano ponasanje ili ne, nesto mi kroz glavu proslo da treba da moze da se klikce gde god...
+
+
+
+to sto svakomalo pise "zbudzeno", "na brazaka" i u tom kontekstu, nije da nisam hteo da se bavim tim i da ga uradim kako treba, nego jednostavno nisam vise imao vremena da se bavim peglanjem jer je bilo jos stvari da pozavrsavam...
+
+
+
+tracer ponekad izgleda besmisleno, ali u stvari dobro radi
+kada krene hak nekog noda svi okolni nodovi koji su vec hakovani i povezani sa tim koji se hakuje pustaju path da se popunjava
+takodje svaki firevall nod se racuna kao da je vec hakovan, tako da cesto pusta linije odatle,ne izgleda normalno, ali u stvari ne radi pogresno
+ako jedna instanca tracera zavrsi sa hakovanjem noda, a sledeci nod koji mu je u u ruti se vec hajuje, za taj nod ne pusta punjenje patha vec ceka da se zavrsi zapoceto hakovanje i onda instant predje na taj nod (popuni path)
+bilo bi ok da se pusti punjenje patha ali da se normalizuje vreme koliko je ostalo do zavrsetka haka noda... ako stignem
+
 

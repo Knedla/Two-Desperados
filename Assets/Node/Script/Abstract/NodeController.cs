@@ -12,6 +12,9 @@ public abstract class NodeController : MonoBehaviour, IExperienceable, ITriggeri
 {
     const float cellDistance = 3;
 
+    public static float maxX; // kasno sam shvatio da mi treba, a ovde mi je bilo najbezbolnije i najbrze da izvucem... - ne znaci da bi ga ostavio tako...
+    public static float maxY;
+
     [SerializeField] private CustomButton CustomButton;
     [SerializeField] private SpriteRenderer SpriteRenderer;
     [SerializeField] private Text DifficultyText;
@@ -23,13 +26,13 @@ public abstract class NodeController : MonoBehaviour, IExperienceable, ITriggeri
     public int Difficulty { get; private set; }
     public int Level => Config.DefaultExperience + Difficulty; //nije resenje problema, u svakom slucaju tu je, lako moze da se promeni...
     public virtual int TriggeringPercent => node.TriggerTracerChance + Difficulty; //treba neka logaritamska funkcija verovatno
+    public NetworkController NetworkController { get; private set; } // SVESTAN SAM DA SU SVE METODE REFERENTNIH PROPERIA IZLOZENE IAKO JE PRIVATE SET, samo nemam jos i kad tim da se bavim
+    public Dictionary<NodeController, NodePathController> Neighbors { get; private set; } // napravi custom, da ne bi bile izlozene metode od dictionary-a
 
     protected BaseNodeState currentState;
-    protected NetworkController networkController;
     protected HashSet<IUser> hackedBy;
 
     Node node; // ovo realno mogu i da sklonim... treba mi jedna vrednost odatle...
-    public Dictionary<NodeController, NodePathController> Neighbors { get; private set; } // napravi custom, da ne bi bile izlozene metode od dictionary-a
 
     protected virtual void Awake()
     {
@@ -46,7 +49,7 @@ public abstract class NodeController : MonoBehaviour, IExperienceable, ITriggeri
 
     public void SetData(NetworkController networkController, Node node)
     {
-        this.networkController = networkController;
+        NetworkController = networkController;
         this.node = node;
         Neighbors = new Dictionary<NodeController, NodePathController>();
         hackedBy = new HashSet<IUser>();
@@ -54,9 +57,7 @@ public abstract class NodeController : MonoBehaviour, IExperienceable, ITriggeri
         transform.position = GetPosition();
         SetDifficulty(node.Difficulty);
     }
-
-    public static float maxX;
-    public static float maxY;
+    
     Vector3 GetPosition() // zbudzeno na brzaka...
     {
         Vector3 position = new Vector3(node.Cell.X * cellDistance, node.Cell.Y * cellDistance);
@@ -149,7 +150,7 @@ public abstract class NodeController : MonoBehaviour, IExperienceable, ITriggeri
     public int GetTimeToHack(IUser forUser) 
     {
         int timeToHack = Config.DefaultHackingDuration + Difficulty;
-        timeToHack += timeToHack + (networkController.GetNetworkDifficulty(forUser) * Framework.PlayerPreferenceData.SpamNodeDecrease / 100);
+        timeToHack += timeToHack + (NetworkController.GetNetworkDifficulty(forUser) * Framework.PlayerPreferenceData.SpamNodeDecrease / 100);
         return timeToHack;
     }
 

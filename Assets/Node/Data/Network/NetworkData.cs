@@ -23,7 +23,7 @@ public class NetworkData
         //Cell[][] cellMatrix = new BasicCellMatrixGenerator(minSpawnPerColumn, maxSpawnPerColumn, maxWidth).Generate();
         //Node[][] nodeMatrix = new BasicNodeMatrixGenerator(cellMatrix).Generate();
         Node[][] nodeMatrix = new MergedCellAndNodeMatrixGenerator(minSpawnPerColumn, maxSpawnPerColumn, maxWidth).Generate();
-        NetworkConnections = new BasicNetworkConnectionGenerator(nodeMatrix).Generate();
+        NetworkConnections = new BasicNetworkConnectionGenerator(nodeMatrix).Generate(); // imam ideju kako bi spojio i MergedCellAndNodeMatrixGenerator sa BasicNetworkConnectionGenerator da se sve izgenerise u jednom prolazu, ali to bi bilo sacuvaj boze za debagovati... zato sam i inicijalno poodvajao sve...
     }
 
     void SetMatrixData(out int minSpawnPerColumn, out int maxSpawnPerColumn, out int maxWidth)

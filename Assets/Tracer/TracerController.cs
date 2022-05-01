@@ -1,23 +1,23 @@
 ﻿using Game.System.Action;
 using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class TracerController : MonoBehaviour
 {
-    [SerializeField] protected NodeController StartNode;
+    [SerializeField] protected NodeController HomeNode;
 
     bool activated;
-    ISearchAlgorithm searchAlgorithm;
 
     private void Awake()
     {
         Framework.EventManager.StartListening(Game.System.Event.CustomListener.ActivateTracers, Activate);
-        searchAlgorithm = new AStar();
     }
 
     private void Start()
     {
-        StartCoroutine(StartNode.TriggerState());
+        StartCoroutine(HomeNode.TriggerState());
     }
 
     //jel tracer svestan postojanja spam noda i njegove funkcionalnosti?
@@ -27,12 +27,15 @@ public class TracerController : MonoBehaviour
     public void Activate()
     {
         StopActivateListener();
-        StartCoroutine(Run());
+        Framework.StartCoroutine(Run());
     }
 
     IEnumerator Run()
     {
-        foreach (NodeController item in searchAlgorithm.GetRoute()) // moze i varijanta da posle svakog noda opet pita za rutu za slucaj da se tezina mreze promenila
+        ISearchAlgorithm searchAlgorithm = new AStar(HomeNode.NetworkController.NodeControllers, HomeNode, HomeNode.NetworkController.StartNodeController);
+        List<NodeController> reverseList = searchAlgorithm.GetRoute().ToList();
+        reverseList.Reverse();
+        foreach (NodeController item in reverseList) // moze i varijanta da posle svakog noda opet pita za rutu za slucaj da se tezina mreze promenila
             yield return TriggerAction(item);
     }
 
